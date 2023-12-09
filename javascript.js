@@ -6,7 +6,7 @@ function random(number) {
 }
 
 function getplayerSelection() {
-    return prompt("pick rock, paper or scissors:", "rock")
+    return prompt("pick rock, paper or scissors:", "rock");
 }
 
 
@@ -28,28 +28,68 @@ function getComputerChoice() {
 
 function chosseWinner(playerSelection, computerSelection){
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors";
+        alert("You Win! Rock beats Scissors");
+        userWin += 1;
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock";
+        alert("You Win! Paper beats Rock");
+        userWin += 1;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper";
+        alert("You Win! Scissors beats Paper");
+        userWin += 1;
     } else if (playerSelection === computerSelection) {
-        return "It`s a Draw!";
+        alert("It`s a Tie!");
     } else  if (computerSelection === "rock" && playerSelection === "scissors") {
-        return "You Lose! Rock beats Scissors";
+        alert("You Lose! Rock beats Scissors");
+        computerWin += 1;
     } else if (computerSelection === "paper" && playerSelection === "rock") {
-        return "You Lose! Paper beats Rock";
+        alert("You Lose! Paper beats Rock");
+        computerWin += 1;
     } else if (computerSelection === "scissors" && playerSelection === "paper") {
-        return "You Lose! Scissors beats Paper";
-    } return userWin;
+        alert("You Lose! Scissors beats Paper");
+        computerWin += 1;
+    }
+}
+
+//
+function GameRound() {
+    const playerSelection = getplayerSelection().toLowerCase();
+    const computerSelection = getComputerChoice();
+    console.log("Your choice:" + playerSelection);
+    console.log("Computer choice:" + computerSelection);
+    alert("Computer use " + computerSelection);
+    chosseWinner(playerSelection, computerSelection);
+}
+
+//Log who get the more wins in 5 rounds.
+function Game() {
+    GameRound();
+    GameRound();
+    GameRound();
+    GameRound();
+    GameRound();
+    console.log(userWin);
+    console.log(computerWin);
+    if (userWin < computerWin) {
+        alert("You Lose :(");
+    } else if (userWin > computerWin) {
+        alert("Congratulations!! You are the Winner :D");
+    } else {
+        alert("It`s a Tie");
+    }
+
 }
     
 
+    
+let userWin = 0;
+let computerWin = 0;
 
-const playerSelection = getplayerSelection().toLowerCase();
-const computerSelection = getComputerChoice();
-console.log("Your choice:" + playerSelection);
-console.log("Computer choice:" + computerSelection);
-console.log(chosseWinner(playerSelection, computerSelection))
+// const playerSelection = getplayerSelection().toLowerCase();
+// const computerSelection = getComputerChoice();
+// console.log("Your choice:" + playerSelection);
+// console.log("Computer choice:" + computerSelection);
+
+Game()
+
 
 
