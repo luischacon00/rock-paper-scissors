@@ -66,17 +66,19 @@ function scoreMarker() {
 //Log who get the more wins in 5 rounds.
 function Game() {
     if ( computerWin === 5) {
-        scoreMarker()
-        alert("You Lose :(");
+        scoreMarker();
+        gameOverText = "You Lose :(";
         computerWin = 0;
         userWin = 0;
-        scoreMarker()
+        scoreMarker();
+        gameOver(gameOverText);
     } else if (userWin === 5) {
-        scoreMarker()
-        alert("Congratulations!! You are the Winner :D");
+        scoreMarker();
+        gameOverText = "Congratulations!! You are the Winner :D";
         computerWin = 0;
         userWin = 0;
-        scoreMarker()
+        scoreMarker();
+        gameOver(gameOverText);
         
     } 
 }
@@ -93,6 +95,7 @@ const paperButton = document.querySelector('#paperButton');
 const scissorsButton = document.querySelector('#scissorsButton');
 const results = document.querySelector('#results');
 const computeResult = document.querySelector('#computerResult');
+const messages = document.querySelector('#messages')
 
 
 rockButton.addEventListener('click', () => { 
@@ -112,9 +115,16 @@ scissorsButton.addEventListener('click', () => {
     Game();
 
 });
-    
+
 const score = document.querySelector('#score');
 
+
+function gameOver(gameOverText){ 
+
+const gameOverMessage = document.createElement('h1');
+gameOverMessage.textContent = gameOverText;
+messages.appendChild(gameOverMessage)
+}
 
 
 
