@@ -1,0 +1,46 @@
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body{
+    background-color: #a0c5cf;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#score { 
+    font-size: 30px;
+    background-color: #e6eceb
+    ;
+    text-align: center;
+    font-weight: bold;
+}
+button {
+ background-color: #e6eceb;
+}
+
+#results {
+    background-color: #005f89;
+    border: solid #e6eceb;
+    width: 30%;
+    font-size: 30px;
+    text-align: center;
+    margin:auto;
+    color:white;
+}
+#computerResult{
+    background-color: #63cdd7;
+    border: solid #e6eceb;
+    width: 70%;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 5%;
+    margin-bottom: 20px;
+    ma
+    color:white;
+}
